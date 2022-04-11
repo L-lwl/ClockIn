@@ -145,7 +145,7 @@ def sign_in_evening(token):
     data = json.dumps(data)
     response = session.post(url=url, headers=header, data=data)
     if response.json()['status'] == 1:
-        msg = '打卡成功'
+        msg = '签到成功'
         Wxpush(msg)
     else:
         msg = parse.quote_plus(response.json()['msg'])
